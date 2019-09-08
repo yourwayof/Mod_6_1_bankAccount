@@ -16,7 +16,7 @@ public class DepositAccount extends GenBankAccount {
             System.out.println("В снятии отказано: с последнего пополнения счета прошло менее месяца.");
             System.out.println("---");
         } else {
-            if (amount > sum){
+            if (amount > this.showAccount()){
             System.out.println("Недостаточно средств для снятия");
                 System.out.println("---");
         } else {

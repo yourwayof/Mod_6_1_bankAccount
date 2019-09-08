@@ -5,11 +5,11 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 public class GenBankAccount {
-    public int amount;
-    public int initialAmount;
-    public int sum = 0;
-    public Calendar addedDate = new GregorianCalendar(1990, Calendar.JANUARY, 1);
-    public SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yy");
+    private int amount;
+    private int initialAmount;
+    protected int sum = 0;
+    protected Calendar addedDate = new GregorianCalendar(1990, Calendar.JANUARY, 1);
+    protected SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yy");
 
     Calendar todayDate = Calendar.getInstance();
 

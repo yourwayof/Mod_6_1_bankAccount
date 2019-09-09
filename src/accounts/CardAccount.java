@@ -7,13 +7,8 @@ public class CardAccount extends GenBankAccount{
     }
 
     @Override
-    public void takeAmount(int amount) {
-        if (this.showAccount() < amount*1.01){
-            System.out.println("Недостаточно средств для снятия");
-            System.out.println("---");
-        }
-        else {
-            this.sum -= amount * 1.01;
-        }
+    public void takeAmount(double amount) {
+        System.out.println("Запрашиваемая сумма для снятия: " + amount);
+        super.takeAmount(1.01 * amount);
     }
 }

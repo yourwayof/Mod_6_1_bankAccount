@@ -5,22 +5,22 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 public class GenBankAccount {
-    private int amount;
-    private int initialAmount;
-    protected int sum = 0;
+    private double amount;
+    private double initialAmount;
+    protected double sum = 0;
     protected Calendar addedDate = new GregorianCalendar(1990, Calendar.JANUARY, 1);
     protected SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yy");
 
     Calendar todayDate = Calendar.getInstance();
 
-    public GenBankAccount(int initialAmount)
+    public GenBankAccount(double initialAmount)
     {
         this.sum = initialAmount;
         System.out.println("Остаток по счету: " + sum);
         System.out.println("---");
     }
 
-    public void addAmount(int amount)
+    public void addAmount(double amount)
     {
         this.sum += amount;
         System.out.println("Счет пополнен на сумму " + amount);
@@ -29,20 +29,20 @@ public class GenBankAccount {
         this.addedDate = todayDate;
     }
 
-    public void takeAmount(int amount)
+    public void takeAmount(double amount)
     {
         if (amount > sum){
             System.out.println("Недостаточно средств для снятия");
             System.out.println("---");
         } else {
             this.sum -= amount;
-            System.out.println("Со счета снята сумма " + amount);
+            System.out.println("Общая сумма, снятая со счета: " + amount);
             System.out.println("Дата проведения операции: " + dateFormat.format(todayDate.getTime()));
             System.out.println("---");
         }
     }
 
-    public int showAccount()
+    public double showAccount()
     {
         String message = "Остаток по Вашему счету: ";
         message += sum;

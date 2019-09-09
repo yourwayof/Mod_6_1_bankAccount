@@ -3,12 +3,12 @@ package accounts;
 import java.util.Calendar;
 
 public class DepositAccount extends GenBankAccount {
-    public DepositAccount (int initialAmount){
+    public DepositAccount (double initialAmount){
         super(initialAmount);
     }
 
     @Override
-    public void takeAmount(int amount) {
+    public void takeAmount(double amount) {
         todayDate = Calendar.getInstance();
         Calendar allowedTakeDate = addedDate;
         allowedTakeDate.add(Calendar.MONTH, 1);
@@ -16,16 +16,10 @@ public class DepositAccount extends GenBankAccount {
             System.out.println("В снятии отказано: с последнего пополнения счета прошло менее месяца.");
             System.out.println("---");
         } else {
-            if (amount > this.showAccount()){
-            System.out.println("Недостаточно средств для снятия");
-                System.out.println("---");
-        } else {
-            this.sum -= amount;
-            System.out.println("Со счета снята сумма " + amount);
-            System.out.println("Дата проведения операции: " + dateFormat.format(todayDate.getTime()));
-                System.out.println("---");
-        }}
+            super.takeAmount(amount);
+        }
     }
-
-
 }
+
+
+
